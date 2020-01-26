@@ -1,8 +1,12 @@
 {% extends "base.html" %} {% block title%} Home Page! {% endblock %} {% block
-content %}
+unsorted %}
+
+<!-- Scripts for loading the plotly animation graph -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 <div class="chart" id="bargraph">
     <script>
-        var graphs = {{content | safe}};
+        var graphs = {{unsorted | safe}};
         Plotly.plot('bargraph',graphs,{});
     </script>
 </div>
